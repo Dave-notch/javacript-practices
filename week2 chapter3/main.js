@@ -119,19 +119,19 @@
 // }
 
 
-// let userPICK=String(prompt("C=/'cardiology/' D=/'Dermatology/' P=/'pediatrics/'"))
-// switch(userPICK){
-//     case "C":
-//         console.log("you will be forwarded to CARDIOLOGY")
-//         break;
-//     case "C":
-//         console.log("you will be forwarded to DERMATOLOGY ")
-//         break;
-//     case "C":
-//         console.log("you will be forwarded to PEDIATRICS ")
-//         break;
-//     default:
-//         console.log("Please enter C or D or P to pick one of our departments")
-// }
+let userPICK=String(prompt("C=/'cardiology/' D=/'Dermatology/' P=/'pediatrics/'"))
+switch(userPICK){
+    case "C":
+        console.log("you will be forwarded to CARDIOLOGY")
+        break;
+    case "C":
+        console.log("you will be forwarded to DERMATOLOGY ")
+        break;
+    case "C":
+        console.log("you will be forwarded to PEDIATRICS ")
+        break;
+    default:
+        console.log("Please enter C or D or P to pick one of our departments")
+}
 
 

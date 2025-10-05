@@ -19,3 +19,4 @@ if(total>=500,total<1000){
 else if(total<500){
     console.log("No discount sorry")
 }
+
