@@ -42,28 +42,63 @@
 //         }
 
 
-let pass = 1234;
-let userpass = prompt("Enter password:");
-let again = 1;
+// let pass = 1234;
+// let userpass = prompt("Enter password:");
+// let again = 1;
 
-while (pass != userpass) {
-  while (again <= 2) {
-    if (userpass == "") {
-      userpass = prompt("It can't be empty. Enter again:");
+// while (pass != userpass) {
+//   while (again <= 2) {
+//     if (userpass == "") {
+//       userpass = prompt("It can't be empty. Enter again:");
+//     }
+
+//     if (pass != userpass) {
+//       userpass = prompt("Enter again:");
+//       again++;
+//     }
+//   }
+
+//   console.log("Times up!!");
+//   break;
+// }
+
+// if (pass == userpass) {
+//   console.log("Correct");
+// } else if (userpass == "") {
+//   console.log("It can't be empty");
+// }
+
+
+// let days=1
+// let name="dhiiqayste"
+// let penetration=1
+// while(days<=7){
+//     console.log(`day ${days}`)
+//     days++
+
+//     penetration=1
+//     while(penetration<=10){
+//         if(penetration%2==0){
+     
+//     console.log(`${name} penetrated ${penetration}`)
+//         }
+//            penetration++
+    
+//     }
+    
+
+// }
+
+
+let num=0
+while(num<=9){
+    console.log(num)
+    num++
+    
+    while(num<=9){
+        
+             total=num*num
+        console.log(num+ " X "+ num+" = "+total)
+        num++
     }
-
-    if (pass != userpass) {
-      userpass = prompt("Enter again:");
-      again++;
-    }
-  }
-
-  console.log("Times up!!");
-  break;
-}
-
-if (pass == userpass) {
-  console.log("Correct");
-} else if (userpass == "") {
-  console.log("It can't be empty");
 }
