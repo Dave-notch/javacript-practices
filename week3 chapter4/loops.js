@@ -1,7 +1,7 @@
-// for(let num=20;num>=1;num--){
-//     if (num%2!==0)
-//     console.log(num) 
-// }
+for(let num=20;num>=1;num--){
+    if (num%2!==0)
+    console.log(num) 
+}
 
 // let num=20
 // while(num>=1){
@@ -90,15 +90,51 @@
 // }
 
 
-let num=0
-while(num<=9){
-    console.log(num)
-    num++
+// let num=0
+// while(num<=9){
+//     console.log(num)
+//     num++
     
-    while(num<=9){
+//     while(num<=9){
         
-             total=num*num
-        console.log(num+ " X "+ num+" = "+total)
-        num++
-    }
-}
+//              total=num*num
+//         console.log(num+ " X "+ num+" = "+total)
+//         num++
+//     }
+// }
+
+// for(let i=1;i<5;i++){
+//     console.log("hi")
+// }
+
+// let i=0
+// while(i<5){
+//     console.log("hi")
+//     i++
+// }
+
+// let array=[5,3,7,9,4]
+// let min=array[0]
+// for(i=2;i<array.length;i++){
+//     if(array[i]<min){
+//         min=array[i]
+//     }
+// }
+// console.log(min)
+
+
+// let fruits = ["apple", "banana", "cherry", "date", "elderberry"];
+// for(i=1;i<fruits.length;i+=2){
+ 
+//     console.log(fruits[i])
+// }
+
+// let numbers = [2, 5, 8, 11, 14, 17, 20];
+// for(i=1;i<numbers.length;i+=2){
+//     if(numbers[i]>10){
+//     console.log(numbers[i])
+//     }
+// }
+
+
+
