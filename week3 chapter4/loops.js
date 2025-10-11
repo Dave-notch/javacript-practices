@@ -1,7 +1,7 @@
-for(let num=20;num>=1;num--){
-    if (num%2!==0)
-    console.log(num) 
-}
+// for(let num=20;num>=1;num--){
+//     if (num%2!==0)
+//     console.log(num) 
+// }
 
 // let num=20
 // while(num>=1){
@@ -138,3 +138,22 @@ for(let num=20;num>=1;num--){
 
 
 
+// let fruits = ["apple", "banana", "mango", "orange"]
+// for(i=0;i<fruits.length;i++){
+//     console.log(fruits[i])
+// }
+
+let numbers = [3, 5, 2, 8, 6, 10];
+let even=0
+let odd=0
+for(i=0;i<numbers.length;i++){
+    if(numbers[i]%2==0){
+    even+=1
+    }
+        else if(numbers[i]%2==1){
+    odd+=1
+    }
+    
+}
+console.log(even)
+console.log(odd)
