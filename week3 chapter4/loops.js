@@ -143,17 +143,43 @@
 //     console.log(fruits[i])
 // }
 
-let numbers = [3, 5, 2, 8, 6, 10];
-let even=0
-let odd=0
-for(i=0;i<numbers.length;i++){
-    if(numbers[i]%2==0){
-    even+=1
-    }
-        else if(numbers[i]%2==1){
-    odd+=1
-    }
+// let numbers = [3, 5, 2, 8, 6, 10];
+// let even=0
+// let odd=0
+// for(i=0;i<numbers.length;i++){
+//     if(numbers[i]%2==0){
+//     even+=1
+//     }
+//         else if(numbers[i]%2==1){
+//     odd+=1
+//     }
     
-}
-console.log(even)
-console.log(odd)
+// }
+// console.log(even)
+// console.log(odd)
+
+
+// ACTUAL ASSINGMENT BELOW | ABOVE CONTAINS SELF TEACHING PRACTICES AND SOME ASSIGNMENTS
+
+// let days=0
+// for(alisteps=1;alisteps<=7;alisteps++){
+//     if(days<alisteps){
+//         days+=1
+//         console.log(`day ${days}:keep walking`)
+//     }
+// }
+
+
+// for(I=0;I<20;I+=2){
+//     console.log(I)
+// }
+
+
+// do{
+//      temp=prompt("enter the current temperature:")
+    
+    
+// }while(temp!=0){
+//     temp=prompt("enter the current temperature:")
+//     console.log(temp)
+// }
