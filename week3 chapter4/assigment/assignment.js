@@ -75,42 +75,38 @@
 
 //coffee shop with the same concept
 
-let menu=["coffee","tea"];
-let addNewitem=parseInt(prompt(`your current menu ${menu} is enter your new item`))
-menu[addNewitem]=menu
-console.log(`edited menu ${menu}`)
-// let customers=prompt("how many customers are you going to serve?")
-// let customerCount=1
-// let dailyrevenue=0
-// for(repeat=1;repeat<=customers;repeat++){
+let customers=prompt("how many customers are you going to serve?")
+let customerCount=1
+let dailyrevenue=0
+for(repeat=1;repeat<=customers;repeat++){
   
-//   let cups=prompt(`customer ${customerCount} how many cups does he need?`)
-  // let check=String(prompt("coffee or tea?")).toLowerCase();
+  let cups=prompt(`customer ${customerCount} how many cups does he need?`)
+  let check=String(prompt("coffee or tea?")).toLowerCase();
 
-//   if(check==="coffee"){
-//     price=parseFloat(prompt("how much is the coffee per cup?"))
-//     total=cups*price
-//   } else if(check==="tea"){
-//     price=parseFloat(prompt("how much is the tea per cup?"))
-//     total=cups*price
-//   }
-//   console.log(`customer ${customerCount} took ${cups} of ${check} for $${total}`)
-//   customerCount+=1
-//    dailyrevenue+=total
+  if(check==="coffee"){
+    price=parseFloat(prompt("how much is the coffee per cup?"))
+    total=cups*price
+  } else if(check==="tea"){
+    price=parseFloat(prompt("how much is the tea per cup?"))
+    total=cups*price
+  }
+  console.log(`customer ${customerCount} took ${cups} of ${check} for $${total}`)
+  customerCount+=1
+   dailyrevenue+=total
    
 
-// }
-// console.log(`your daily revenue is $${dailyrevenue}`)
-// let taxrate=0.10
-// let tax=dailyrevenue*taxrate
-// let aftertax=dailyrevenue-tax
-// if(dailyrevenue<5){
-//   taxrate=0
-// }
-// console.log(`your revenue before tax $${dailyrevenue} after tax is $${aftertax}`)
+}
+console.log(`your daily revenue is $${dailyrevenue}`)
+let taxrate=0.10
+let tax=dailyrevenue*taxrate
+let aftertax=dailyrevenue-tax
+if(dailyrevenue<5){
+  taxrate=0
+}
+console.log(`your revenue before tax $${dailyrevenue} after tax is $${aftertax}`)
 
-// if(dailyrevenue<5){
-//   console.log(`heyy!! your daily revenue is less than $5 so try doing better`)
-// }else if(dailyrevenue>=5){
-//   console.log(`you did good today keep that spirit steady dont let it down`)
-// }
+if(dailyrevenue<5){
+  console.log(`heyy!! your daily revenue is less than $5 so try doing better`)
+}else if(dailyrevenue>=5){
+  console.log(`you did good today keep that spirit steady dont let it down`)
+}
