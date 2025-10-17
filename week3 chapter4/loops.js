@@ -161,25 +161,25 @@
 
 // ACTUAL ASSINGMENT BELOW | ABOVE CONTAINS SELF TEACHING PRACTICES AND SOME ASSIGNMENTS
 
-// let days=0
-// for(alisteps=1;alisteps<=7;alisteps++){
-//     if(days<alisteps){
-//         days+=1
-//         console.log(`day ${days}:keep walking`)
-//     }
-// }
+let days=0
+for(alisteps=1;alisteps<=7;alisteps++){
+    if(days<alisteps){
+        days+=1
+        console.log(`day ${days}:keep walking`)
+    }
+}
 
 
-// for(I=0;I<20;I+=2){
-//     console.log(I)
-// }
+for(I=0;I<20;I+=2){
+    console.log(I)
+}
 
 
-// do{
-//      temp=prompt("enter the current temperature:")
+do{
+     temp=prompt("enter the current temperature:")
     
     
-// }while(temp!=0){
-//     temp=prompt("enter the current temperature:")
-//     console.log(temp)
-// }
+}while(temp!=0){
+    temp=prompt("enter the current temperature:")
+    console.log(temp)
+}
