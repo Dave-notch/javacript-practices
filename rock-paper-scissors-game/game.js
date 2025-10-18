@@ -116,6 +116,9 @@
 //             alert(`you choosed 'scissors' and the computer choosed ${computerMove} so '${result}'`)
     
 // }
+
+
+// above code is messed up down there is redifined compact one at the end of the day am always going to sleep with new knowledge regardless where i learnt or how hard it was peace
  
 
    

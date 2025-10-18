@@ -1,74 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <style>
-        * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat';
-}
-        body{
-            background-color: #000;
-        }
-        h1{
-            display: flex;
-            justify-content: center;
-            color: white;
-            margin-top: 100px;
-            font-size: 5rem
-        }
-        button{
-            width: 400px;
-      height: 400px;
-      border-radius: 50%;      /* makes it circular */
-      border: 2px solid #333;
-      background-color: white;
-      display: inline;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rock Paper Scissors</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      background: linear-gradient(to right, #ffffff, #cccccc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 3rem;
+      text-transform: capitalize;
+    }
+
+    /* Buttons container */
+    .buttons {
+      display: flex;
       justify-content: center;
       align-items: center;
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 25px;
-      transition: transform 0.2s, background-color 0.2s;
-      margin-top: 200px;
-      margin-left: 400px;
+      flex-wrap: wrap;
+      gap: clamp(1.5rem, 5vw, 4rem);
+    }
 
-        }
-         
-        .scores{
-            color: #fff;
-            display: inline-flex;
-            margin-left: 970px;
-            margin-top: 200px;
-            font-size: 5rem;
-            gap: 100px;
-            
-        }
-        
-        
-       
-    </style>
-    <h1>rock-paper-scissors</h1>
+    /* Apple-like buttons */
+    button {
+      width: clamp(120px, 20vw, 180px);
+      height: clamp(120px, 20vw, 180px);
+      border-radius: 50%;
+      border: none;
+      background: linear-gradient(145deg, #fafafa, #dcdcdc);
+      color: #222;
+      font-size: clamp(1rem, 2vw, 1.4rem);
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow:
+        0 5px 15px rgba(255, 255, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      transition: all 0.25s ease;
+    }
+
+    button:hover {
+      transform: translateY(-6px);
+      box-shadow:
+        0 10px 25px rgba(255, 255, 255, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    }
+
+    button:active {
+      transform: scale(0.96);
+      background: linear-gradient(145deg, #e3e3e3, #cfcfcf);
+    }
+
+    /* Scores section */
+    .scores {
+      margin-top: 4rem;
+      padding: clamp(1rem, 3vw, 1.5rem) clamp(2rem, 6vw, 4rem);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: clamp(1rem, 5vw, 4rem);
+      font-size: clamp(1rem, 2vw, 1.5rem);
+      color: #ccc;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+    }
+
+    .scores p span {
+      color: #fff;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+
+      .buttons {
+        gap: 1.5rem;
+      }
+
+      .scores {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>rock-paper-scissors</h1>
+
+  <div class="buttons">
     <button class="rock">ROCK</button>
     <button class="paper">PAPER</button>
     <button class="scissors">SCISSORS</button>
+  </div>
 
-   <div class="scores">
+  <div class="scores">
     <p>Wins <span id="wins">0</span></p>
     <p>Loses <span id="loses">0</span></p>
     <p>Ties <span id="ties">0</span></p>
-   </div>
+  </div>
 
-  
-
-    <script src="game.js"></script>
-   
-    
+  <script src="game.js"></script>
 </body>
 </html>
