@@ -15,7 +15,7 @@ console.log(products.fun())
 
 console.log(JSON.stringify(products))
 
-const productsJSon=JSON.stringify(products)
-console.log(JSON.parse(productsJSon))
+const JSonString=JSON.stringify(products)
+console.log(JSON.parse(JSonString))
 
 

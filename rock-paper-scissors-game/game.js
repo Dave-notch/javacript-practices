@@ -126,6 +126,7 @@ const rock = document.getElementsByClassName('rock')[0]
 const paper = document.getElementsByClassName('paper')[0]
 const scissors = document.getElementsByClassName('scissors')[0]
 
+
 let wins=0;
 let loses=0;
 let ties=0;
@@ -159,6 +160,13 @@ if(result==='win'){
    loses++
 }else ties++
 
+resetBtn.onclick=()=>{
+   wins=0
+   loses=0
+   ties=0
+   
+}
+
 
 document.getElementById('wins').
 innerText=wins
@@ -166,8 +174,9 @@ document.getElementById('loses').
 innerText=loses
 document.getElementById('ties').
 innerText=ties
+document.getElementById('resetBtn')
+innerText=resetBtn
 }
 rock.onclick = () => playermove('rock');
 paper.onclick = () => playermove('paper');
 scissors.onclick = () => playermove('scissors');
-
