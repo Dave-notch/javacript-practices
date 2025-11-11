@@ -18,4 +18,22 @@ console.log(JSON.stringify(products))
 const JSonString=JSON.stringify(products)
 console.log(JSON.parse(JSonString))
 
+const object={
+    message: 'heyy how are u'
+}
+// const message=object.message
+const {message}=object
+console.log(message)
+
+const c0nsole={
+    l0g:[]
+}
+let user=prompt('enter message property')
+c0nsole.l0g.push(user)
+console.log(c0nsole.l0g)
+
+
+
+
+
 
