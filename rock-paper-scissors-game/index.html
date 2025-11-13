@@ -45,7 +45,9 @@
     }
 
     /* Apple-like buttons */
-    button {
+    .rock,
+    .paper,
+    .scissors{
       width: clamp(120px, 20vw, 180px);
       height: clamp(120px, 20vw, 180px);
       border-radius: 50%;
@@ -64,8 +66,8 @@
     button:hover {
       transform: translateY(-6px);
       box-shadow:
-        0 10px 25px rgba(255, 255, 255, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+        0 10px 25px rgba(4, 1, 1, 0.15),
+        inset 0 1px 0 rgba(2, 1, 1, 0.5);
     }
 
     button:active {
@@ -74,7 +76,8 @@
     }
 
     /* Scores section */
-    .scores {
+    .scores,
+    .resetBtn {
       margin-top: 4rem;
       padding: clamp(1rem, 3vw, 1.5rem) clamp(2rem, 6vw, 4rem);
       border-radius: 20px;
@@ -90,9 +93,10 @@
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
     }
 
-    .scores p span {
-      color: #fff;
+     p  {
+      color: #bf1515;
       font-weight: bold;
+      font-size: 10rem;
     }
 
     @media (max-width: 600px) {
@@ -120,12 +124,15 @@
     <button class="scissors">SCISSORS</button>
   </div>
 
-  <div class="scores">
-    <p>Wins <span id="wins">0</span></p>
-    <p>Loses <span id="loses">0</span></p>
-    <p>Ties <span id="ties">0</span></p>
-  </div>
-  <div class="scores" id="resetBtn">RESET SCORE</div>
+
+
+  <p class="js-score scores"></p>
+
+  <button class="resetBtn" id="resetBtn" onclick="
+        score.wins=0,
+        score.loses=0,
+        score.ties=0
+  ">RESET SCORE</button>
 
   <script src="game.js"></script>
 </body>

@@ -126,10 +126,14 @@ const rock = document.getElementsByClassName('rock')[0]
 const paper = document.getElementsByClassName('paper')[0]
 const scissors = document.getElementsByClassName('scissors')[0]
 
+let score=JSON.parse(localStorage.getItem('score'))||{
+   wins:0,
+   loses:0,
+   ties:0
+}
 
-let wins=0;
-let loses=0;
-let ties=0;
+UpdateScoreElement()
+
 
 function getComputerMove(){
      let randomNumber=Math.random();
@@ -160,11 +164,12 @@ if(result==='win'){
    loses++
 }else ties++
 
-resetBtn.onclick=()=>{
-   wins=0
-   loses=0
-   ties=0
-   
+localStorage.setItem('score' , JSON.stringify(score));
+UpdateScoreElement()
+
+function UpdateScoreElement(){
+   document.querySelector('.js-score')
+   .innerHTML= `wins: ${score.wins} loses: ${score.loses} ties: ${score.ties}`
 }
 
 
