@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Events Per Section</title>
+  <style>
+    body { font-family: "Poppins", Arial, sans-serif; background: #f0f2f5; margin: 0; padding: 0; color: #333; }
+    header { background: linear-gradient(135deg, #11998e, #38ef7d); padding: 30px; text-align: center; color: white; box-shadow: 0 4px 12px rgba(0,0,0,0.2);}
+    h1 { margin: 0; font-size: 36px; }
+    .container { width: 90%; max-width: 1200px; margin: 30px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 20px; }
+    .card { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: 0.3s; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 6px 18px rgba(0,0,0,0.15); }
+    button, input, select, textarea { padding: 10px; margin: 5px 0; border-radius: 6px; border: 1px solid #ccc; width: 100%; box-sizing: border-box; }
+    button { background: #11998e; color: white; border: none; cursor: pointer; transition: 0.3s; }
+    button:hover { background: #38ef7d; }
+    .hover-box { width: 100%; height: 80px; background: #ffcccc; text-align: center; line-height: 80px; margin-bottom: 10px; border-radius: 6px; }
+    p.output { background: #f0f0f0; padding: 5px 10px; border-radius: 6px; min-height: 20px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>JS Events Per Section</h1>
+  <p>See each event's result immediately below it!</p>
+</header>
+
+<div class="container">
+
+  <!-- Click & Double Click -->
+  <div class="card">
+    <h2>Click & Double Click</h2>
+    <button id="clickBtn">Click Me</button>
+    <button id="dblClickBtn">Double Click Me</button>
+    <p id="clickOutput" class="output"></p>
+  </div>
+
+  <!-- Hover Events -->
+  <div class="card">
+    <h2>Hover Events</h2>
+    <div id="hoverBox" class="hover-box">Hover over me!</div>
+    <p id="hoverOutput" class="output"></p>
+  </div>
+
+  <!-- Focus & Blur -->
+  <div class="card">
+    <h2>Focus & Blur</h2>
+    <input type="text" id="focusInput" placeholder="Focus here..." />
+    <p id="focusOutput" class="output"></p>
+  </div>
+
+  <!-- Input & Change -->
+  <div class="card">
+    <h2>Input & Change</h2>
+    <input type="text" id="liveInput" placeholder="Type to see live output" />
+    <select id="selectInput">
+      <option value="">Choose an option</option>
+      <option value="Option A">Option A</option>
+      <option value="Option B">Option B</option>
+      <option value="Option C">Option C</option>
+    </select>
+    <p id="inputOutput" class="output"></p>
+  </div>
+
+  <!-- Keyboard Event -->
+  <div class="card">
+    <h2>Keyboard Event</h2>
+    <input type="text" id="keyInput" placeholder="Press any key..." />
+    <p id="keyOutput" class="output"></p>
+  </div>
+
+  <!-- Scroll Event -->
+  <div class="card" style="height:200px; overflow-y:scroll;">
+    <h2>Scroll Event</h2>
+    <div id="scrollContent" style="height:500px; background: linear-gradient(to bottom, #f9f9f9, #ccc);"></div>
+    <p id="scrollOutput" class="output"></p>
+  </div>
+
+  <!-- Context Menu -->
+  <div class="card">
+    <h2>Right Click (Context Menu)</h2>
+    <div id="contextBox" class="hover-box">Right-click me!</div>
+    <p id="contextOutput" class="output"></p>
+  </div>
+
+  <!-- Event Delegation -->
+  <div class="card">
+    <h2>Event Delegation</h2>
+    <ul id="delegationList">
+      <li>Delegated Item 1</li>
+      <li>Delegated Item 2</li>
+      <li>Delegated Item 3</li>
+    </ul>
+    <p id="delegationOutput" class="output"></p>
+  </div>
+
+</div>
+
+<script src="tailwind.js"></script>
+</body>
+</html>
