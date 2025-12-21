@@ -137,7 +137,7 @@
     .passRules{
         color: #6b7280;
         margin-left: 1rem;
-        font-size: 0.7vw;
+        font-size: clamp(0.7rem,0.7vw,3rem);;
     }
 
     .form-options {
@@ -185,6 +185,29 @@
     .login-form{
       display: none;
     }
+
+    .errorMessege{
+      font-size: clamp(0.7rem,0.7vw,3rem);;
+      margin-left: 0.9rem;
+      color: #6b7280;
+
+      opacity: 0;
+      transform: translateX(6px);
+      animation: slideUpFade 0.5s ease-in forwards;
+      /* display: none; */
+
+    }
+    @keyframes slideUpFade {
+      from {
+        opacity: 0;
+        transform: translateX(6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
     
 
     /* ===== Responsive ===== */
@@ -287,6 +310,7 @@
             <p></p>
             <label for="labelPassword" id="signuplabelPassword">Confirm Password</label>
             <input id="confirmPassword" type="password" placeholder="Create a password" />
+            <p id="errorMessege" class="errorMessege"></p>
             <div class="passRules">
                 <p id="characters">✔ 8 characters long</p>
                 <p id="uppercase">✔ One uppercase</p>
@@ -320,7 +344,7 @@
         loginform.style.display='none'
         signupform.style.display='block'
         siteTitle.innerHTML="Create your New Account"
-        passcheck()
+      
     })
     switchToLogin.addEventListener('click',()=>{
         loginform.style.display='block'
