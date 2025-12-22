@@ -11,21 +11,11 @@ comparingPass.forEach(input=>{
         let pass=Password.value
         let confirm=confirmPassword.value
 
-        if(confirm===""){
-            errorMessege.innerHTML="Required"
-            errorMessege.style.color="rgb(214, 108, 108)"
-            confirmPassword.style.border="1px solid rgb(214, 108, 108)"
-            signuplabelPassword.style.color="rgb(214, 108, 108)"
-        }else if(confirm!=pass){
-            errorMessege.innerHTML="The passwords you entered do not match."
-            errorMessege.style.color="rgb(214, 108, 108)"
-            confirmPassword.style.border="1px solid rgb(214, 108, 108)"
-            signuplabelPassword.style.color="rgb(214, 108, 108)"
-        }else if(confirm===pass){
-            errorMessege.innerHTML="You created password successfully"
-            errorMessege.style.color="rgba(23, 207, 78, 1)"
-            confirmPassword.style.border="1px solid rgba(23, 207, 78, 1)"
-            signuplabelPassword.style.color="rgba(23, 207, 78, 1)"
+      if(confirm===pass){
+        errorMessege.innerHTML="You created password successfully"
+        errorMessege.style.color="rgba(23, 207, 78, 1)"
+        confirmPassword.style.border="1px solid rgba(23, 207, 78, 1)"
+        signuplabelPassword.style.color="rgba(23, 207, 78, 1)"
         }
     })
 })
@@ -110,16 +100,87 @@ signupEmail.addEventListener("input",(event)=>{
     signupEmail.classList.remove("input-error", "input-success");
     if(emailRegex.test(email)){
         
-        signupEmail.classList.add("input-success")
+        signupEmail.style.border = "1px solid rgba(23, 207, 78, 1)";
+        errorEmail.innerHTML =""
+        labelEmail.style.color="rgba(23, 207, 78, 1)"
     }else {
-        signupEmail.classList.add("input-error")
+        signupEmail.style.border = "1px solid rgb(214, 108, 108)"
     }
     // console.log(email);
     
 })
 let themeToggle=document.getElementById("themeToggle")
 let signupBtn=document.getElementById("signupBtn")
+let labelEmail=document.getElementById("labelEmail")
+let errorEmail=document.getElementById("errorEmail")
+let signupNameError=document.getElementById("signupNameError")
+let signupNameinput=document.getElementById("signupNameinput") 
+let signupNamelabel=document.getElementById("signupNamelabel")
 
-signupBtn.addEventListener("click",()=>{
 
+signupNameinput.addEventListener("input",(event)=>{
+   let name = signupNameinput.value.trim()
+   let nameRegex= /^[^\s@1-9]+\s[A-Za-z\s]+$/
+   if(nameRegex.test(name)){
+    signupNameinput.style.border = "1px solid rgba(23, 207, 78, 1)";
+    signupNamelabel.style.color="rgba(23, 207, 78, 1)"
+    signupNameError.innerHTML=""
+   }else{
+    signupNameinput.style.border = "1px solid rgb(214, 108, 108)"
+   }
 })
+
+
+signupBtn.addEventListener("click", () => {
+    let name = signupNameinput.value.trim();
+    let email = signupEmail.value.trim();
+    let pass = Password.value;
+    let confirm = confirmPassword.value;
+    
+
+
+    
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let nameRegex= /^[^\s@1-9]+\s[A-Za-z\s]+$/
+
+    let hasError = false;
+
+    if (name === "" || !nameRegex.test(name)) {
+        signupNameError.innerHTML = "Required" 
+        signupNameError.style.color = "rgb(214, 108, 108)";
+        signupNameinput.style.border = "1px solid rgb(214, 108, 108)";
+        signupNamelabel.style.color = "rgb(214, 108, 108)";
+        hasError = true;
+    }
+
+    if (email === "" || !emailRegex.test(email)) {
+        errorEmail.innerHTML = email === "" ? "Required" : "Invalid email";
+        errorEmail.style.color = "rgb(214, 108, 108)";
+        signupEmail.style.border = "1px solid rgb(214, 108, 108)";
+        labelEmail.style.color = "rgb(214, 108, 108)";
+        hasError = true;
+    }
+
+    if (pass === "") {
+        signupPassword.style.border = "1px solid rgb(214, 108, 108)";
+        labelPassword.style.color = "rgb(214, 108, 108)";
+        signuplabelPassword.style.color = "rgb(214, 108, 108)";
+        hasError = true;
+    }
+
+    if (confirm === "" || confirm !== pass) {
+        errorMessege.innerHTML =
+        confirm === "" ? "Required" : "The passwords you entered do not match.";
+        errorMessege.style.color = "rgb(214, 108, 108)";
+        confirmPassword.style.border = "1px solid rgb(214, 108, 108)";
+        signuplabelPassword.style.color = "rgb(214, 108, 108)";
+        hasError = true;
+    }
+
+    if (!hasError) {
+        errorMessege.style.color = "rgba(23, 207, 78, 1)";
+        confirmPassword.style.border = "1px solid rgba(23, 207, 78, 1)";
+        signuplabelPassword.style.color = "rgba(23, 207, 78, 1)";
+        window.location.href="main_page.html"
+    }
+});
