@@ -51,6 +51,7 @@
 
     .site-info h1 {
       font-size: 2.39rem;
+      font-size: clamp(0.5rem,2.39rem,3rem);;
       margin-bottom: 12px;
     }
 
@@ -58,7 +59,7 @@
       margin-bottom: 140%;
       color: #cbd5f5;
       line-height: 1.6;
-      font-size: 1.2rem;
+      font-size: clamp(0.1rem,1.2rem,3rem);;
     }
 
     /* ===== Auth Panel ===== */
@@ -298,24 +299,29 @@
             <label for="signupName">Name</label>
             <input id="signupName" type="text" placeholder="Your name" />
           </div>
-
+<!-- 
           <div class="form-group">
             <label for="signupEmail">Email</label>
             <input id="signupEmail" type="email" placeholder="you@example.com" />
-          </div>
+          </div> -->
 
           <div class="form-group">
             <label for="labelPassword" id="labelPassword">Password</label>
             <input id="signupPassword" type="password" placeholder="Create a password" />
             <p></p>
             <label for="labelPassword" id="signuplabelPassword">Confirm Password</label>
-            <input id="confirmPassword" type="password" placeholder="Create a password" />
+            <input id="confirmPassword" type="password" placeholder="Confirm a password" />
             <p id="errorMessege" class="errorMessege"></p>
             <div class="passRules">
                 <p id="characters">✔ 8 characters long</p>
                 <p id="uppercase">✔ One uppercase</p>
                 <p id="oneSymbol">✔ add atleast one Symbol</p>
             </div>
+
+            <div class="form-group">
+            <label for="signupEmail">Email</label>
+            <input id="signupEmail" type="email" placeholder="you@example.com" />
+          </div>
           </div>
 
           <button class="btn-primary" id="signupBtn" type="button">
