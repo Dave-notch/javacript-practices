@@ -72,15 +72,54 @@
     .top-bar {
       display: flex;
       justify-content: flex-end;
-      padding: 20px 32px;
+      padding: 20px 20
+      
+      
     }
 
-    .theme-toggle {
-      border: 1px solid var(--border);
-      background: var(--card);
-      padding: 8px 14px;
-      border-radius: 8px;
+        /* From Uiverse.io by mobinkakei */ 
+    .label {
+      display: inline-flex;
+      align-items: center;
       cursor: pointer;
+      color: #394a56;
+    }
+
+    .label-text {
+      margin-left: 16px;
+    }
+
+    .toggle {
+      isolation: isolate;
+      position: relative;
+      height: 30px;
+      width: 770px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: -8px -4px 8px 0px #ffffff,
+        8px 4px 12px 0px #d1d9e6,
+        4px 4px 4px 0px #d1d9e6 inset,
+        -4px -4px 4px 0px #ffffff inset;
+    }
+
+    .toggle-state {
+      display: none;
+    }
+
+    .indicator {
+      height: 100%;
+      width: 200%;
+      background: #ecf0f3;
+      border-radius: 15px;
+      transform: translate3d(-75%, 0, 0);
+      transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
+      box-shadow: -8px -4px 8px 0px #ffffff,
+        8px 4px 12px 0px #d1d9e6;
+      
+    }
+
+    .toggle-state:checked ~ .indicator {
+      transform: translate3d(25%, 0, 0);
     }
 
     .auth-card {
@@ -88,9 +127,10 @@
       width: 100%;
       max-width: 420px;
       background: var(--card);
-      padding: 40px;
+      padding: 30px;
       border-radius: 16px;
       box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      
     }
 
     .auth-header {
@@ -241,9 +281,13 @@
     <section class="auth-panel" id="authPanel">
 
       <div class="top-bar" id="topBar">
-        <button class="theme-toggle" id="themeToggle">
-          🌙 Dark Mode
-        </button>
+        <!-- From Uiverse.io by mobinkakei --> 
+        <label class="label">
+            <div class="toggle">
+                <input class="toggle-state" id="darkMode" type="checkbox" name="check" value="check">
+                <div class="indicator" id="indicator"></div>
+            </div>
+        </label>
       </div>
 
       <div class="auth-card" id="authCard">
@@ -262,7 +306,7 @@
 
           <div class="form-group">
             <label for="labelPassword">Password</label>
-            <input id="loginPassword" type="password" placeholder="••••••••" />
+            <input id="loginPassword" type="password" placeholder="••••••••" value="show" />
             <!-- <div class="passRules">
                 <p id="characters">✔ 8 characters long</p>
                 <p id="uppercase">✔ One uppercase</p>
@@ -314,9 +358,9 @@
             <input id="confirmPassword" type="password" placeholder="Confirm a password" />
             <p id="errorMessege" class="errorMessege"></p>
             <div class="passRules">
-                <p id="characters">✔ 8 characters long</p>
-                <p id="uppercase">✔ One uppercase</p>
-                <p id="oneSymbol">✔ add atleast one Symbol</p>
+                <p id="characters">√  8 characters long</p>
+                <p id="uppercase">√  One uppercase</p>
+                <p id="oneSymbol">√  add atleast one Symbol</p>
             </div>
 
             <div class="form-group">

@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-green-200">
+    
+    <nav class="flex justify-between m-7 w-300  items-center ml-50">
+        <h1 class="rounded-xl bg-black text-white w-20 text-center">A'nor</h1>
+        <a href="">Home</a>
+        <a href="">Services</a>
+        <a href="">Contact</a>
+        <a href="">Explore</a>
+        <a class="bg-purple-500 rounded-xl text-center w-30 text-white " href="">apply On</a>
+    </nav>
+
+    <div class="bg-white rounded-xl flex justify-center items-center w-200 h-350 ml-87">
+        <div>
+             <!-- LOGIN -->
+        <form class="hidden" id="loginForm">
+             <div class="auth-header">
+            <h2>Sign in</h2>
+            <p>Enter your credentials</p>
+          </div>
+
+          <div class="form-group">
+            <label for="loginEmail">Email</label>
+            <input id="loginEmail" type="email" placeholder="you@example.com" />
+          </div>
+
+          <div class="form-group">
+            <label for="labelPassword">Password</label>
+            <input id="loginPassword" type="password" placeholder="••••••••" value="show" />
+           
+            
+          </div>
+
+          
+            <label class="remember">
+              <input id="rememberMe" type="checkbox" />
+              Remember me
+            </label>
+            <button class="btn-primary" id="loginBtn" type="button">
+            Sign In
+          </button>
+
+          <div class="switch-auth">
+            Don’t have an account?
+            <span id="switchToSignup">Sign up</span>
+          </div>
+          </div>
+        </form>
+
+          
+        
+
+        <!-- SIGN UP -->
+        <form class="flex flex-col gap-2" id="signupForm">
+            <div class="mb-5">
+            <h2 class="text-2xl font-semibold mb-2">Create account </h2>
+            <p class="text-base text-gray-500  ">Get started in seconds</p>
+            </div>
+           
+        
+
+          
+            <label class="relative text-gray-500 text-sm mb-1 block" id="signupNamelabel">Name</label>            
+            <input class="w-full rounded-xl bg-gray-100 text-sm py-3 pl-4 outline-none focus:outline-none  focus:border focus:border-black-200" id="signupNameinput" type="text" placeholder="Your name" />
+            <p id="signupNameError" class="errorMessege"></p>
+        
+
+
+          
+            <label class="relative text-gray-500 text-sm mb-1 block" id="labelPassword">Password</label>
+            <input class="w-full rounded-xl bg-gray-100 text-sm py-3 pl-4 outline-none focus:outline-none focus:border focus:border-black-200" id="signupPassword" type="password" placeholder="Create a password" />
+            <p></p>
+            <label class="relative text-gray-500 text-sm mb-1 block" id="signuplabelPassword">Confirm Password</label>
+            <input class="w-full rounded-xl bg-gray-100 text-sm py-3 pl-4 outline-none focus:outline-none focus:border focus:border-black-200" id="confirmPassword" type="password" placeholder="Confirm a Password" />
+            <p id="errorMessege" class="errorMessege"></p>
+            <div class="text-sm text-gray-500 text-[(clamp(0.7rem,0.7vw,3rem))]">
+                 <p id="characters">√  8 characters long</p>
+                <p id="uppercase">√  One uppercase</p>
+                <p id="oneSymbol">√  add atleast one Symbol</p>
+            
+
+            
+            <label class="relative text-gray-500 text-sm mb-1 block" id="signupEmail">Email</label>
+            <input class="w-full rounded-xl bg-gray-100 text-sm py-3 pl-4 outline-none focus:outline-none focus:border focus:border-black-200" id="signupEmail" type="text" placeholder="you@example.com"/>
+            <p id="errorEmail" class="text-sm ml-4 m-2">Required please fill</p>
+         
+
+          <button class="bg-blue-400 w-100  rounded-xl h-10 text-white cursor-pointer" id="signupBtn" type="button">
+            Sign Up
+          </button>
+
+          <div class="text-black text-base text-center">
+            Already have an account?
+            <span class=" text-center text-base text-blue-500" id="switchToLogin">Sign in</span>
+          </div>
+         </div>
+       </form>
+    </div>
+    <script src="tailwind-pr.js"></script>
+  </body>
+</html>
