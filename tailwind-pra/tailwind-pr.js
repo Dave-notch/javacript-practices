@@ -10,19 +10,25 @@ comparingPass.forEach(input=>{
     input.addEventListener("input",(event)=>{
         let pass=Password.value
         let confirm=confirmPassword.value
-    if (!pass || !confirm) {
-    errorMessege.innerHTML = "Required";
-    errorMessege.style.color = "rgb(214, 108, 108)";
-    confirmPassword.style.border = "1px solid rgb(214, 108, 108)";
-     signuplabelPassword.style.color=""
-    return;
-  }
+  //   if (!pass || !confirm) {
+  //   errorMessege.innerHTML = "Required";
+  //   errorMessege.style.color = "rgb(214, 108, 108)";
+  //   confirmPassword.style.border = "1px solid rgb(214, 108, 108)";
+  //    signuplabelPassword.style.color=""
+  //   return;
+  // }
 
-      if(confirm==pass){
-        errorMessege.innerHTML="You created password successfully"
+     if(!confirm||!pass){
+      errorMessege.innerHTML="Required"
+      confirmPassword.style.border = "";
+      return;
+     }
+
+      if(confirm==pass ){
+        errorMessege.innerHTML="Valid match"
         errorMessege.style.color="rgba(23, 207, 78, 1)"
         confirmPassword.style.border="1px solid rgba(23, 207, 78, 1)"
-        signuplabelPassword.style.color="rgba(23, 207, 78, 1)"
+        
         }else{
           errorMessege.innerHTML="password don't match"
           errorMessege.style.color = "rgb(214, 108, 108)";
@@ -52,6 +58,8 @@ Password.addEventListener("input",(event)=>{
   let hasSymbol = symbols.some(s => pass.includes(s));
   let hasUppercase = uppercase.some(u => pass.includes(u));
 
+   
+
 
   characters.style.color = isLengthValid
     ? "rgba(23, 207, 78, 1)"
@@ -70,12 +78,12 @@ Password.addEventListener("input",(event)=>{
   labelPassword.style.color =
     isLengthValid && hasSymbol && hasUppercase
       ? "rgba(23, 207, 78, 1)"
-      : "rgb(214, 108, 108)";
+      : "";
 
    signupPassword.style.border =
     isLengthValid && hasSymbol && hasUppercase
       ? "1px solid rgba(23, 207, 78, 1)"
-      : "1px solid rgb(214, 108, 108)";
+      : "";
     
       
 }
@@ -128,6 +136,7 @@ let errorEmail=document.getElementById("errorEmail")
 let signupNameError=document.getElementById("signupNameError")
 let signupNameinput=document.getElementById("signupNameinput") 
 let signupNamelabel=document.getElementById("signupNamelabel")
+let passMessege=document.getElementById("passMessege")
 
 
 signupNameinput.addEventListener("input",(event)=>{
@@ -144,6 +153,12 @@ signupNameinput.addEventListener("input",(event)=>{
 
 
 signupBtn.addEventListener("click", () => {
+     
+
+
+
+
+
     let name = signupNameinput.value.trim();
     let email = signupEmail.value.trim();
     let pass = Password.value;
@@ -167,7 +182,7 @@ signupBtn.addEventListener("click", () => {
 
     if (email === "" || !emailRegex.test(email)) {
         errorEmail.innerHTML = email === "" ? "Required" : "Invalid email";
-        errorEmail.style.color = "rgb(214, 108, 108)";
+        errorEmail.style.color = "text-red-500";
         signupEmail.style.border = "1px solid rgb(214, 108, 108)";
         labelEmail.style.color = "rgb(214, 108, 108)";
         hasError = true;
@@ -177,6 +192,8 @@ signupBtn.addEventListener("click", () => {
         signupPassword.style.border = "1px solid rgb(214, 108, 108)";
         labelPassword.style.color = "rgb(214, 108, 108)";
         signuplabelPassword.style.color = "rgb(214, 108, 108)";
+        passMessege.innerHTML = "Required" 
+        passMessege.style.color = "rgb(214, 108, 108)";
         hasError = true;
     }
 
@@ -195,6 +212,13 @@ signupBtn.addEventListener("click", () => {
         signuplabelPassword.style.color = "rgba(23, 207, 78, 1)";
         window.location.href="main_page.html"
     }
+
+    signupPassword.style.border =
+    !isLengthValid && !hasSymbol && !hasUppercase
+      ? "1px solid rgb(214, 108, 108)"
+      : "";
+
+    
 });
 
 
